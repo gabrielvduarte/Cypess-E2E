@@ -7,7 +7,7 @@ beforeEach(() => {
 });
 
 describe('DevFinance', () =>{
-    it('New input transaction ', () => {
+    it('New input transaction value positive', () => {
        addTransaction('test','30','2025-07-23')  
        cy.get('#incomeDisplay').contains('R$ 30,00')
        cy.get('#totalDisplay').contains('R$ 30,00')
@@ -22,7 +22,7 @@ describe('DevFinance', () =>{
         
     });
     
-    it('New input transaction negative', () => {
+    it('New input transaction zero', () => {
         addTransaction('test',"00", '2025-07-23')
         cy.get('.expense').contains('R$ 0,00')
     });
